@@ -48,7 +48,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="bg-gray-200 shadow-md">
+      <header className="bg-gray-100 shadow-md">
         {/* PC端 */}
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between">
@@ -66,7 +66,7 @@ export default function Header() {
                   return (
                     <div key={menu.path}>
                       <Link href={menu.path}>
-                        <a className="py-5 px-4 text-lg   hover:text-yellow-600 hover:border-yellow-600 hover:border-b-3">
+                        <a className="py-5 lg:px-6 text-lg md:px-1   hover:text-yellow-600 hover:border-yellow-600 hover:border-b-3">
                           {menu.title}
                         </a>
                       </Link>
@@ -79,14 +79,10 @@ export default function Header() {
             {/*  */}
             <div className="hidden md:flex items-center space-x-1">
               <input
-                className=" focus:outline-none 
-           w-3/4 shadow-md  h-10 px-5 my-3 lg:my-0 text-lg text-black"
+                className=" focus:outline-none w-3/4 shadow-md  h-10 px-5 my-3 lg:my-0 text-lg text-black"
                 placeholder="搜索..."
               />
-              <button
-                className=" w-1/4 bg-gray-100 min-w-0 text-center px-2 
-          h-10 shadow-md my-2 text-xl hover:bg-gray-300 focus:outline-none "
-              >
+              <button className=" w-1/4 bg-gray-100 min-w-0 text-center px-2 h-10 shadow-md my-2 text-xl hover:bg-gray-300 focus:outline-none ">
                 <img
                   className="w-6 lg:w-6 block m-auto"
                   src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"
@@ -115,11 +111,8 @@ export default function Header() {
           </div>
         </div>
         {/* 手机端 */}
-        <div
-          className="mobile-menu  md:hidden"
-          className={menuSwitch ? "hidden" : ""}
-        >
-          <div className="hidden md:flex items-center space-x-1">
+        <div className={menuSwitch ? " hidden" : " px-12 bg-gray-200 "}>
+          <div className="md:hidden flex items-center  ">
             <input
               className=" focus:outline-none 
            w-3/4 shadow-md  h-10 px-5 my-3 lg:my-0 text-lg text-black"
@@ -137,12 +130,12 @@ export default function Header() {
             </button>
           </div>
 
-          <div className="hidden pl-5 md:flex items-center space-x-1">
+          <div className="md:hidden flex flex-col items-center ">
             {menus.map((menu) => {
               return (
-                <div key={menu.path}>
+                <div key={menu.path} className="w-full text-center pb-4">
                   <Link href={menu.path}>
-                    <a className="py-5 px-4 text-lg   hover:text-yellow-600 hover:border-yellow-600 hover:border-b-3">
+                    <a className=" text-lg  font-bold   hover:text-yellow-600 hover:border-yellow-600 hover:border-b-3">
                       {menu.title}
                     </a>
                   </Link>

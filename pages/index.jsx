@@ -2,11 +2,11 @@ import Layout from "../components/layout/index.jsx";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Date from "../components/date";
+
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
       {/* Keep the existing code here */}
-
       {/* Add this <section> tag below the existing <section> tag */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -24,6 +24,11 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
+      <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />{" "}
+      <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />{" "}
+      <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />{" "}
+      <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />{" "}
+      <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
     </Layout>
   );
 }
