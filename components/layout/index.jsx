@@ -20,10 +20,9 @@ export default function Layout({ children }) {
         <meta name="og:title" content={siteTitle} />
       </Head>
 
-      <div className=" flex flex-col min-h-screen">
+      <div className=" flex flex-col min-h-screen bg-gray-50">
         <Header></Header>
         <main className="flex-1">{children}</main>
-
         <Footer></Footer>
       </div>
     </>

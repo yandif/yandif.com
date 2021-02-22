@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className=" h-16 bg-blue-400"></footer>
+      <footer className=" h-16 bg-gray-200"></footer>
     </>
   );
 }

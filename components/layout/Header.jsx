@@ -1,96 +1,35 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Header() {
-  let menus = [
-    {
-      title: "首页",
-      path: "/",
-    },
-    {
-      title: "分类",
-      path: "/categories/",
-
-      submenus: [
-        {
-          title: "技术",
-          path: "/category/技术/",
-        },
-        {
-          title: "杂论",
-          path: "/category/杂论/",
-        },
-        {
-          title: "转载",
-          path: "/category/转载/",
-        },
-      ],
-    },
-    {
-      title: "归档",
-      path: "/archives/",
-    },
-    {
-      title: "留言版",
-      path: "/comment/",
-    },
-    {
-      title: "友人帐",
-      path: "/links/",
-    },
-    {
-      title: "关于",
-      path: "/about",
-    },
-  ];
-
   const [menuSwitch, setMenuSwitch] = useState(true);
 
   return (
     <>
-      <header className="bg-gray-100 shadow-md">
+      <header className="bg-white select-none shadow">
         {/* PC端 */}
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between">
             {/*  */}
             <div className="flex">
               {/*  */}
-              <div className="flex items-center md:py-auto py-4 px-4 md:px-0 mr-32">
-                <Link href="/">
-                  <a className=" font-bold text-2xl ">Yandif</a>
-                </Link>
+              <div className=" flex items-center  py-4 px-4 md:px-0 mr-32">
+                <span className="font-bold text-2xl">Yandif</span>
               </div>
               {/*  */}
-              <div className="hidden pl-5 md:flex items-center space-x-1">
-                {menus.map((menu) => {
-                  return (
-                    <div key={menu.path}>
-                      <Link href={menu.path}>
-                        <a className="py-5 lg:px-6 text-lg md:px-1   hover:text-yellow-600 hover:border-yellow-600 hover:border-b-3">
-                          {menu.title}
-                        </a>
-                      </Link>
-                    </div>
-                  );
-                })}
+              <div className="hidden pl-5 md:flex  items-center space-x-1">
+                <Menu></Menu>
               </div>
-              {/*  */}
             </div>
-            {/*  */}
-            <div className="hidden md:flex items-center space-x-1">
-              <input
-                className=" focus:outline-none w-3/4 shadow-md  h-10 px-5 my-3 lg:my-0 text-lg text-black"
-                placeholder="搜索..."
-              />
-              <button className=" w-1/4 bg-gray-100 min-w-0 text-center px-2 h-10 shadow-md my-2 text-xl hover:bg-gray-300 focus:outline-none ">
-                <img
-                  className="w-6 lg:w-6 block m-auto"
-                  src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"
-                  alt=""
-                />
-              </button>
+
+            {/* 搜索框 */}
+            <div className="hidden md:block pt-1">
+              <Search></Search>
             </div>
-            {/*  */}
+            {/* 搜索框 */}
+
+            {/* 下拉菜单开关 */}
             <div className="md:hidden flex items-center px-5">
               <button
                 onClick={() => {
@@ -107,44 +46,96 @@ export default function Header() {
                 </svg>
               </button>
             </div>
-            {/*  */}
+            {/* 下拉菜单开关 */}
           </div>
         </div>
-        {/* 手机端 */}
-        <div className={menuSwitch ? " hidden" : " px-12 bg-gray-200 "}>
-          <div className="md:hidden flex items-center  ">
-            <input
-              className=" focus:outline-none 
-           w-3/4 shadow-md  h-10 px-5 my-3 lg:my-0 text-lg text-black"
-              placeholder="搜索..."
-            />
-            <button
-              className=" w-1/4 bg-gray-100 min-w-0 text-center px-2 
-          h-10 shadow-md my-2 text-xl hover:bg-gray-300 focus:outline-none "
-            >
-              <img
-                className="w-6 lg:w-6 block m-auto"
-                src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/search-512.png"
-                alt=""
-              />
-            </button>
-          </div>
 
-          <div className="md:hidden flex flex-col items-center ">
-            {menus.map((menu) => {
-              return (
-                <div key={menu.path} className="w-full text-center pb-4">
-                  <Link href={menu.path}>
-                    <a className=" text-lg  font-bold   hover:text-yellow-600 hover:border-yellow-600 hover:border-b-3">
-                      {menu.title}
-                    </a>
-                  </Link>
-                </div>
-              );
-            })}
+        {/* 下拉菜单 */}
+        <div
+          className={
+            menuSwitch ? " hidden" : "md:hidden max-w-sm m-auto  shadow-sm "
+          }
+        >
+          <div>
+            <Search />
+          </div>
+          <div className=" flex flex-col items-center ">
+            <Menu></Menu>
           </div>
         </div>
+        {/* 下拉菜单 */}
       </header>
+    </>
+  );
+}
+
+function Search() {
+  return (
+    <div className="flex items-center">
+      <input
+        className=" focus:outline-none w-3/4  bg-gray-50   h-10 px-5 my-3 lg:my-0 text-lg "
+        placeholder="搜索..."
+      />
+      <button className="focus:outline-none  w-1/4 bg-gray-50   text-center  h-10 my-2 text-xl px-2 ">
+        <img
+          className="w-6 lg:w-6 block m-auto"
+          src="/images/ui/search.webp"
+          alt="搜索"
+        />
+      </button>
+    </div>
+  );
+}
+
+function Menu() {
+  let menus = [
+    {
+      title: "首页",
+      path: "/",
+    },
+    {
+      title: "分类",
+      path: "/categories",
+    },
+    {
+      title: "标签",
+      path: "/tags",
+    },
+    {
+      title: "归档",
+      path: "/archives",
+    },
+    {
+      title: "关于",
+      path: "/about",
+    },
+  ];
+
+  menus.map((v) => {
+    v.regexp = RegExp("^" + v.path + "$", "i");
+    return v;
+  });
+  const path = useRouter().asPath;
+
+  return (
+    <>
+      {menus.map((menu) => {
+        return (
+          <div key={menu.path} className="mb-3 md:m-0">
+            <Link href={menu.path}>
+              <a
+                className={
+                  menu.regexp.test(path)
+                    ? "py-5 lg:px-6 text-lg md:px-1  font-bold"
+                    : "py-5 lg:px-6 text-lg md:px-1 text-gray-500 hover:text-black"
+                }
+              >
+                {menu.title}
+              </a>
+            </Link>
+          </div>
+        );
+      })}
     </>
   );
 }
