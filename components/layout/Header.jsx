@@ -18,9 +18,9 @@ export default function Header() {
                 <span className="font-bold text-2xl">Yandif</span>
               </div>
               {/*  */}
-              <div className="hidden pl-5 md:flex  items-center space-x-1">
+              <nav className="hidden pl-5 md:flex  items-center space-x-1">
                 <Menu></Menu>
-              </div>
+              </nav>
             </div>
 
             {/* 搜索框 */}
@@ -34,6 +34,9 @@ export default function Header() {
               <button
                 onClick={() => {
                   setMenuSwitch(!menuSwitch);
+                }}
+                onDoubleClick={() => {
+                  console.log(1);
                 }}
                 type="button"
                 className="block flex-grow text-black lg:hidden hover:text-gray-800 focus:text-black focus:outline-none"
@@ -59,9 +62,9 @@ export default function Header() {
           <div>
             <Search />
           </div>
-          <div className=" flex flex-col items-center ">
+          <nav className=" flex flex-col items-center ">
             <Menu></Menu>
-          </div>
+          </nav>
         </div>
         {/* 下拉菜单 */}
       </header>
@@ -121,7 +124,7 @@ function Menu() {
     <>
       {menus.map((menu) => {
         return (
-          <div key={menu.path} className="mb-3 md:m-0">
+          <div key={menu.path} className="mb-4 md:m-0">
             <Link href={menu.path}>
               <a
                 className={
