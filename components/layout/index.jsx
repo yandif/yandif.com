@@ -9,7 +9,7 @@ export default function Layout({ children }) {
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="description" content="博客" />
         <meta
           property="og:image"
@@ -23,9 +23,7 @@ export default function Layout({ children }) {
 
       <div className=" flex flex-col min-h-screen bg-gray-100">
         <Header></Header>
-        <main className=" overflow-hidden w-full md:w-3/5 mx-auto my-5  px-5 bg-white shadow py-10 flex-1">
-          {children}
-        </main>
+        <main className=" flex-1">{children}</main>
         <Footer></Footer>
       </div>
     </>

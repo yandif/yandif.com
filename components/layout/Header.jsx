@@ -35,9 +35,6 @@ export default function Header() {
                 onClick={() => {
                   setMenuSwitch(!menuSwitch);
                 }}
-                onDoubleClick={() => {
-                  console.log(1);
-                }}
                 type="button"
                 className="block flex-grow text-black lg:hidden hover:text-gray-800 focus:text-black focus:outline-none"
               >
@@ -101,10 +98,6 @@ function Menu() {
       path: "/categories",
     },
     {
-      title: "标签",
-      path: "/tags",
-    },
-    {
       title: "归档",
       path: "/archives",
     },
@@ -129,7 +122,7 @@ function Menu() {
               <a
                 className={
                   menu.regexp.test(path)
-                    ? "py-5 lg:px-6 text-lg md:px-1  font-bold"
+                    ? "py-5 lg:px-6 text-lg md:px-1  font-bold text-black"
                     : "py-5 lg:px-6 text-lg md:px-1 text-gray-500 hover:text-black"
                 }
               >

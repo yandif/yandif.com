@@ -3,7 +3,7 @@ import Layout from "../../components/layout/index";
 import Link from "next/link";
 import dayjs from "dayjs";
 export default function Post({ postData }) {
-  const articles = postData;
+  const articles = postData.articles;
 
   articles.sort((a, b) => {
     if (dayjs(a.date) > dayjs(b.date)) {
@@ -49,12 +49,14 @@ export default function Post({ postData }) {
       <Layout>
         <div className=" pb-36 w-full md:w-3/5 mx-auto my-5  px-5 bg-white  shadow py-10">
           <Head>
-            <title>归档</title>
+            <title>分类 | {postData.title}</title>
           </Head>
           <article>
-            <h1 className="w-full text-center text-4xl font-bold">归档</h1>
+            <h1 className="w-full text-center text-4xl font-bold">
+              {postData.title}
+            </h1>
             <div className="w-full text-center p-5 text-lg text-gray-400">
-              共{articles.length}篇文章
+              该分类共{postData.articles.length}篇文章
             </div>
             {dateMap.map((item) => {
               return (
@@ -89,13 +91,24 @@ export default function Post({ postData }) {
   );
 }
 
-import { getSortedPostsData } from "../../lib/api/articles/index";
+import {
+  getCategoryDataById,
+  getAllPostIds,
+} from "../../lib/api/categories/index";
 
-export async function getStaticProps() {
-  const postData = await getSortedPostsData();
+export async function getStaticProps({ params }) {
+  const postData = await getCategoryDataById(params.id);
   return {
     props: {
       postData,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const paths = await getAllPostIds();
+  return {
+    paths,
+    fallback: false,
   };
 }
