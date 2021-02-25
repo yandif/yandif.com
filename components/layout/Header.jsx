@@ -72,7 +72,7 @@ export default function Header() {
 function Search() {
   return (
     <div className="flex items-center">
-      <input
+      {/* <input
         className=" focus:outline-none w-3/4  bg-gray-50   h-10 px-5 my-3 lg:my-0 text-lg "
         placeholder="搜索..."
       />
@@ -82,7 +82,7 @@ function Search() {
           src="/images/ui/search.webp"
           alt="搜索"
         />
-      </button>
+      </button> */}
     </div>
   );
 }
