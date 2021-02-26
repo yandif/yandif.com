@@ -32,7 +32,6 @@ function ArticleList({ articles }) {
 }
 
 function AritcleCard({ article }) {
-  console.log(article);
   return (
     <section className="article shadow">
       <div className="title">

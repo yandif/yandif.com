@@ -45,49 +45,44 @@ export default function Post({ postData }) {
   });
 
   return (
-    <>
-      <Layout>
-        <div className=" pb-36 w-full md:w-3/5 mx-auto my-5  px-5 bg-white  shadow py-10">
-          <Head>
-            <title>分类 | {postData.title}</title>
-          </Head>
-          <article>
-            <h1 className="w-full text-center text-4xl font-bold">
-              {postData.title}
-            </h1>
-            <div className="w-full text-center p-5 text-lg text-gray-400">
-              该分类共{postData.articles.length}篇文章
-            </div>
-            {dateMap.map((item) => {
-              return (
-                <div key={item.year}>
-                  <div className=" text-xl font-bold  md:ml-32 my-6">
-                    {item.year}
-                  </div>
-                  {item.articles.map((article) => {
-                    return (
-                      <div
-                        key={article.id}
-                        className="flex md:mx-44 ml-1  pb-5"
-                      >
-                        <span className=" w-2/12 h-7 break-words block text-lg text-gray-400 mr-5">
-                          {article.date}
-                        </span>
-                        <Link href={`/articles/${article.id}`}>
-                          <a className="w-10/12  text-xl font-bold flex-grow ">
-                            {article.title}
-                          </a>
-                        </Link>
-                      </div>
-                    );
-                  })}
+    <Layout>
+      <div className=" pb-36 w-full md:w-3/5 mx-auto my-5  px-5 bg-white  shadow py-10">
+        <Head>
+          <title>分类 | {postData.title}</title>
+        </Head>
+        <article>
+          <h1 className="w-full text-center text-4xl font-bold">
+            {postData.title}
+          </h1>
+          <div className="w-full text-center p-5 text-lg text-gray-400">
+            该分类共{postData.articles.length}篇文章
+          </div>
+          {dateMap.map((item) => {
+            return (
+              <div key={item.year}>
+                <div className=" text-xl font-bold  md:ml-32 my-6">
+                  {item.year}
                 </div>
-              );
-            })}
-          </article>
-        </div>
-      </Layout>
-    </>
+                {item.articles.map((article) => {
+                  return (
+                    <div key={article.id} className="flex md:mx-44 ml-1  pb-5">
+                      <span className=" w-2/12 h-7 break-words block text-lg text-gray-400 mr-5">
+                        {article.date}
+                      </span>
+                      <Link href={`/articles/${article.id}`}>
+                        <a className="w-10/12  text-xl font-bold flex-grow ">
+                          {article.title}
+                        </a>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </article>
+      </div>
+    </Layout>
   );
 }
 

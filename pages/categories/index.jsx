@@ -3,7 +3,6 @@ import Layout from "../../components/layout/index";
 import Link from "next/link";
 
 export default function Post({ categoriess }) {
-  console.log(categoriess);
   return (
     <Layout>
       <div className=" pb-36 w-full px-6 md:w-3/5 mx-auto my-5     ">
