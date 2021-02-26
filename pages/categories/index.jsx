@@ -33,7 +33,7 @@ export default function Post({ categoriess }) {
 
 import { getCategoriesData } from "../../lib/api/categories/index";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const categoriess = await getCategoriesData();
   return {
     props: {

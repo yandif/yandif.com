@@ -77,7 +77,7 @@ export default function Post({ postData }) {
 
 import { getPostDataById, getAllPostIds } from "../../lib/api/articles/index";
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const postData = await getPostDataById(params.id);
   return {
     props: {
@@ -86,7 +86,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
+export async function getServerSidePaths() {
   const paths = await getAllPostIds();
   return {
     paths,
