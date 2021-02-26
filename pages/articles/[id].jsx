@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Post({ postData }) {
   return (
     <Layout>
-      <div className=" w-full md:w-3/5 mx-auto my-5  px-5   py-10">
+      <div className="bg-white w-full md:w-3/5 mx-auto my-5  px-8   py-10">
         <Head>
           <title>文章 | {postData.title}</title>
         </Head>
