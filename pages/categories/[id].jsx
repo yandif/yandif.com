@@ -91,7 +91,7 @@ import {
   getAllPostIds,
 } from "../../lib/api/categories/index";
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const postData = await getCategoryDataById(params.id);
   return {
     props: {
@@ -100,7 +100,7 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-export async function getServerSidePaths() {
+export async function getStaticPaths() {
   const paths = await getAllPostIds();
   return {
     paths,

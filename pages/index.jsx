@@ -1,22 +1,52 @@
 import Layout from "../components/layout/index.jsx";
-import { getSortedPostsData } from "../lib/api/articles/index";
+import { getSortedPostsData, getPostsCount } from "../lib/api/articles/index";
 import Link from "next/link";
-export default function Home({ allPostsData }) {
+import { useState } from "react";
+export default function Home({ allPostsData, count }) {
+  const [PostsDatas, setPostsData] = useState(allPostsData);
+  const [loading, setLoading] = useState(false);
+
+  async function loadMore() {
+    setLoading(true);
+    setPostsData([
+      ...PostsDatas,
+      ...(await getSortedPostsData(PostsDatas.length)),
+    ]);
+    setLoading(false);
+  }
+  function More() {
+    if (loading) {
+      return <p className="text-2xl">loading ...</p>;
+    }
+
+    if (PostsDatas.length < count) {
+      return (
+        <a className=" text-2xl" onClick={loadMore}>
+          加载更多
+        </a>
+      );
+    }
+  }
+
   return (
-    <Layout>
-      <article className=" w-full md:w-1/2 mx-auto my-2  px-5   py-10">
-        <ArticleList articles={allPostsData} />
-      </article>
-    </Layout>
+    <div>
+      <Layout>
+        <article className=" w-full md:w-1/2 mx-auto my-2  px-5   py-10">
+          <ArticleList articles={PostsDatas} />
+          <div className="text-center">{More()}</div>
+        </article>
+      </Layout>
+    </div>
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const allPostsData = await getSortedPostsData();
-
+  const count = await getPostsCount();
   return {
     props: {
       allPostsData,
+      count,
     },
   };
 }
@@ -70,6 +100,7 @@ function AritcleCard({ article }) {
           <span className="item-text">…</span>
         </div> */}
       </div>
+
       <style jsx>{`
         .article {
           background: white;
