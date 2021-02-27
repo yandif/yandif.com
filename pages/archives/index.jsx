@@ -92,7 +92,7 @@ export default function Post({ postData }) {
 import { getSortedPostsData } from "../../lib/api/articles/index";
 
 export async function getStaticProps() {
-  const postData = await getSortedPostsData();
+  const postData = await getSortedPostsData(0, 1000);
   return {
     props: {
       postData,

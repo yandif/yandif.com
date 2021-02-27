@@ -10,7 +10,9 @@ export default function Home({ allPostsData, count }) {
     setLoading(true);
     setPostsData([
       ...PostsDatas,
-      ...(await getSortedPostsData(PostsDatas.length)),
+      ...(await fetch(
+        `https://yandif.com/api/articles?_start=${PostsDatas.length}`
+      ).then((v) => v.json())),
     ]);
     setLoading(false);
   }
