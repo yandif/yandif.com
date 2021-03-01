@@ -1,4 +1,9 @@
 a {
   color: #1e6a9c;
+
+
 }
 
+*{
+  -webkit-tap-highlight-color:rgba(255,0,0,0);
+}

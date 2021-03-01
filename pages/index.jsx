@@ -23,7 +23,7 @@ export default function Home({ allPostsData, count }) {
 
     if (PostsDatas.length < count) {
       return (
-        <a className=" text-2xl" onClick={loadMore}>
+        <a className=" cursor-pointer text-2xl" onClick={loadMore}>
           加载更多
         </a>
       );

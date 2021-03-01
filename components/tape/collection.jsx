@@ -184,7 +184,7 @@ export default function Collection({ state, setState, collection }) {
         }
         onClick={(e) => {
           e.stopPropagation();
-          setShowAdd(!showAdd);
+          setShowAdd(false);
         }}
       >
         {showAdd ? (
