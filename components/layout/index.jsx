@@ -14,16 +14,6 @@ export default function Layout({ children }) {
           content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no"
         />
         <title>首页</title>
-        <script>
-          {`var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?8e956c33973b09ff9b7bfe4b86ee0f73";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-`}
-        </script>
       </Head>
 
       <div className=" bg-gray-100  flex flex-col min-h-screen ">
