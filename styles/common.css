@@ -13,4 +13,5 @@ body{
 
 body::-webkit-scrollbar {
   display: none;
+  background-color: #A7D0F2;
 }

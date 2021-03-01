@@ -17,11 +17,16 @@ export default function Layout({ children }) {
         <title>首页</title>
       </Head>
 
-      <div className=" bg-gray-100  flex flex-col min-h-screen ">
+      <div className=" layout  flex flex-col min-h-screen ">
         <Header></Header>
         <main className=" flex-1">{children}</main>
         <Footer></Footer>
       </div>
+      <style jsx>{`
+        .layout {
+          background-color: #eff3f5;
+        }
+      `}</style>
     </div>
   );
 }

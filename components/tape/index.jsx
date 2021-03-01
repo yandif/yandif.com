@@ -139,7 +139,7 @@ export default function Tape() {
           --header-top: 15px;
           --header-collention-top: 15px;
           --bg-color: #e1e1e1;
-          --fg-high: #222222;
+          --fg-high: #030202;
           --fg-med: #999999;
           --fg-low: #bbbcbb;
           --fg-inv: #545454;
