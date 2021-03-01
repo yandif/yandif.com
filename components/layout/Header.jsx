@@ -32,7 +32,8 @@ export default function Header() {
             {/* 下拉菜单开关 */}
             <div className="md:hidden flex items-center px-5">
               <button
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation();
                   setMenuSwitch(!menuSwitch);
                 }}
                 type="button"
@@ -100,6 +101,10 @@ function Menu() {
     {
       title: "归档",
       path: "/archives",
+    },
+    {
+      title: "Tape",
+      path: "/tape",
     },
     {
       title: "关于",
