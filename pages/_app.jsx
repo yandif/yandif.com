@@ -21,7 +21,19 @@ export default function App({ Component, pageProps }) {
         hm.src = "https://hm.baidu.com/hm.js?8e956c33973b09ff9b7bfe4b86ee0f73";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
-      })();`,
+      })();
+      (function() {
+        var google = document.createElement("script");
+        google.src = "https://www.googletagmanager.com/gtag/js?id=G-LBVTY5GPW3";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(google, s);
+      })();
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LBVTY5GPW3');
+      `,
     };
   };
 
