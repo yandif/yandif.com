@@ -13,6 +13,7 @@ export default function Layout({ children }) {
           name="viewport"
           content="width=device-width,initial-scale=1, maximum-scale=1,user-scalable=no"
         />
+
         <title>首页</title>
       </Head>
 

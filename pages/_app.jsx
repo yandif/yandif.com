@@ -4,6 +4,13 @@ import "../styles/highlight.css";
 import "../styles/common.css";
 import Head from "next/head";
 import { Router } from "next/router";
+
+Router.events.on("routeChangeComplete", (url) => {
+  try {
+    window._hmt.push(["_trackPageview", url]);
+  } catch (e) {}
+});
+
 export default function App({ Component, pageProps }) {
   const getAnalyticsTag = () => {
     return {
@@ -17,12 +24,6 @@ export default function App({ Component, pageProps }) {
       })();`,
     };
   };
-
-  Router.events.on("routeChangeComplete", (url) => {
-    try {
-      window._hmt.push(["_trackPageview", url]);
-    } catch (e) {}
-  });
 
   return (
     <>
