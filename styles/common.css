@@ -6,4 +6,11 @@ a {
 
 *{
   -webkit-tap-highlight-color:rgba(255,0,0,0);
+}      
+body{   
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }

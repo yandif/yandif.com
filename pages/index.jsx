@@ -3,18 +3,20 @@ import { getSortedPostsData, getPostsCount } from "../lib/api/articles/index";
 import Link from "next/link";
 import { useState } from "react";
 export default function Home({ allPostsData, count }) {
-  const [PostsDatas, setPostsData] = useState(allPostsData);
+  let index = 0;
+  const page = 10;
+  const [PostsDatas, setPostsData] = useState(
+    allPostsData.slice(index, index + page)
+  );
   const [loading, setLoading] = useState(false);
 
   async function loadMore() {
     setLoading(true);
-    setPostsData([
-      ...PostsDatas,
-      ...(await fetch(
-        `https://yandif.com/api/articles?_start=${PostsDatas.length}`
-      ).then((v) => v.json())),
-    ]);
-    setLoading(false);
+    index += page;
+    setTimeout(() => {
+      setPostsData([...PostsDatas, ...allPostsData.slice(index, index + page)]);
+      setLoading(false);
+    }, 300);
   }
   function More() {
     if (loading) {
@@ -43,7 +45,7 @@ export default function Home({ allPostsData, count }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = await getSortedPostsData();
+  const allPostsData = await getSortedPostsData(0, 1000);
   const count = await getPostsCount();
   return {
     props: {
