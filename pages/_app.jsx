@@ -29,13 +29,13 @@ export default function App({ Component, pageProps }) {
         s.parentNode.insertBefore(google, s);
       })();
       
-      (function() {
-        var google = document.createElement("script");
-        google.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-        google["data-ad-client"]="ca-pub-6862524730310795";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(google, s);
-      })();
+      // (function() {
+      //   var google = document.createElement("script");
+      //   google.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+      //   google["data-ad-client"]="ca-pub-6862524730310795";
+      //   var s = document.getElementsByTagName("script")[0];
+      //   s.parentNode.insertBefore(google, s);
+      // })();
 
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
