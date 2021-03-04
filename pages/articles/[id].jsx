@@ -1,13 +1,13 @@
 import Head from "next/head";
 import Layout from "../../components/layout/index";
 import Link from "next/link";
-import scroll from "../../lib/scroll";
+import scrollTo from "../../lib/scroll";
 import { useEffect } from "react";
 export default function Post({ postData }) {
   useEffect(() => {
     postData.heading.toc.map((v) => {
       document.querySelector(`#toc-${v.id}`).addEventListener("click", () => {
-        scroll(`#toc-${v.id}`);
+        scrollTo(`#toc-${v.id}`, false);
       });
     });
   }, [true]);
@@ -30,9 +30,8 @@ export default function Post({ postData }) {
                     ` pl-${v.tag + 1} toc-h${v.tag}` +
                     (v.tag == postData.heading.maxTitle ? " text-lg" : "")
                   }
-                  // href={`#toc-${v.id}`}
                   onClick={() => {
-                    scroll(`#toc-${v.id}`);
+                    scrollTo(`#toc-${v.id}`, false);
                   }}
                 >
                   {v.text}
