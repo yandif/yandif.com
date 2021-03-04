@@ -4,10 +4,32 @@ import Link from "next/link";
 export default function Post({ postData }) {
   return (
     <Layout>
+      <Head>
+        <title>文章 | {postData.title}</title>
+      </Head>
+      <div className="mb-16 h-screen overflow-y-auto fixed right-0 hidden md:block md:w-1/5">
+        <div className=" h-3/4 overflow-y-auto mb-6 mx-8 p-3 mt-8 ">
+          <div className="w-full pl- text-center mb-4 text-lg">文章目录</div>
+          <div className="pt-2">
+            {postData.heading.toc.map((v) => {
+              return (
+                <a
+                  className={
+                    "block text-black" +
+                    " my-1" +
+                    ` pl-${v.tag + 1} toc-h${v.tag}` +
+                    (v.tag == postData.heading.maxTitle ? " text-lg" : "")
+                  }
+                  href={`#${v.id}`}
+                >
+                  {v.text}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </div>
       <div className="bg-white w-full md:w-3/5 mx-auto my-5  px-8   py-10">
-        <Head>
-          <title>文章 | {postData.title}</title>
-        </Head>
         <article>
           <div className="title">{postData.title}</div>
           <div className="meta mb-9">
@@ -69,6 +91,24 @@ export default function Post({ postData }) {
 
         .item-text {
           padding: 1px 2px 0 6px;
+        }
+        .toc-h1 {
+          font-size: 18px;
+        }
+        .toc-h2 {
+          font-size: 16px;
+        }
+        .toc-h3 {
+          font-size: 14px;
+        }
+        .toc-h4 {
+          font-size: 12px;
+        }
+        .toc-h5 {
+          font-size: 10px;
+        }
+        .toc-h6 {
+          font-size: 8px;
         }
       `}</style>
     </Layout>
