@@ -1,7 +1,16 @@
 import Head from "next/head";
 import Layout from "../../components/layout/index";
 import Link from "next/link";
+import scroll from "../../lib/scroll";
+import { useEffect } from "react";
 export default function Post({ postData }) {
+  useEffect(() => {
+    postData.heading.toc.map((v) => {
+      document.querySelector(`#toc-${v.id}`).addEventListener("click", () => {
+        scroll(`#toc-${v.id}`);
+      });
+    });
+  });
   return (
     <Layout>
       <Head>
@@ -11,16 +20,20 @@ export default function Post({ postData }) {
         <div className=" h-3/4 overflow-y-auto mb-6 mx-8 p-3 mt-8 ">
           <div className="w-full pl- text-center mb-4 text-lg">文章目录</div>
           <div className="pt-2">
-            {postData.heading.toc.map((v) => {
+            {postData.heading.toc.map((v, i) => {
               return (
                 <a
+                  key={i}
                   className={
-                    "block text-black" +
+                    "block text-black cursor-pointer" +
                     " my-1" +
                     ` pl-${v.tag + 1} toc-h${v.tag}` +
                     (v.tag == postData.heading.maxTitle ? " text-lg" : "")
                   }
-                  href={`#${v.id}`}
+                  // href={`#toc-${v.id}`}
+                  onClick={() => {
+                    scroll(`#toc-${v.id}`);
+                  }}
                 >
                   {v.text}
                 </a>
@@ -29,7 +42,7 @@ export default function Post({ postData }) {
           </div>
         </div>
       </div>
-      <div className="bg-white w-full md:w-3/5 mx-auto my-5  px-8   py-10">
+      <div className=" cu bg-white w-full md:w-3/5 mx-auto my-5  px-8   py-10">
         <article>
           <div className="title">{postData.title}</div>
           <div className="meta mb-9">
