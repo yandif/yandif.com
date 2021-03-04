@@ -9,7 +9,7 @@ export default function Collection({ state, setState, collection }) {
   const addInput = useRef();
   let colors = [0, 0, 0, 0, 0, 0],
     color = ["", "#e6414a", "#daa320", "#a43a8f", "#eb88b0", "#5a9b8f"],
-    workingState = ["", "优先", "工作中", "已批准", "已提交", "已完成"],
+    workingState = ["", "优先", "工作中", "已测试", "已提交", "已完成"],
     count;
   color_done();
   function color_done() {
