@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 
-export default function useScrollTo() {
+/**
+ *  获取文档高度
+ * @param number height  滚动多少开始显示
+ */
+export default function useScrollTo(height) {
   const [isHidden, setIsHidden] = useState(true);
   const fn = () => {
-    if (document.documentElement.scrollTop + document.body.scrollTop > 800) {
-      setIsHidden(true);
-    } else {
+    if (document.documentElement.scrollTop + document.body.scrollTop > height) {
       setIsHidden(false);
+    } else {
+      setIsHidden(true);
     }
   };
   useEffect(() => {
@@ -14,6 +18,6 @@ export default function useScrollTo() {
     return () => {
       window.removeEventListener("scroll", fn);
     };
-  }, [1]);
+  });
   return isHidden;
 }
