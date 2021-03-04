@@ -30,9 +30,11 @@ export default function Category() {
 
   ### 联系方式
   
-  E-Mail：yandif@foxmail.com
+ *  E-Mail：yandif@foxmail.com
+ *  GitHub：https://github.com/yandif
 
-  <br/>
+ \n\n
+
 
   ### 免责声明
 
