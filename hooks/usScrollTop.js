@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
  * @param number height  滚动多少开始显示
  */
 export default function useScrollTo(height) {
-  const [isHidden, setIsHidden] = useState(true);
+  const [flag, setFlag] = useState(true);
   const fn = () => {
     if (document.documentElement.scrollTop + document.body.scrollTop > height) {
-      setIsHidden(false);
+      setFlag(false);
     } else {
-      setIsHidden(true);
+      setFlag(true);
     }
   };
   useEffect(() => {
@@ -19,5 +19,5 @@ export default function useScrollTo(height) {
       window.removeEventListener("scroll", fn);
     };
   });
-  return isHidden;
+  return flag;
 }

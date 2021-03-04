@@ -4,7 +4,7 @@ import Header from "./Header";
 import scrollTo from "../../lib/scroll";
 import useScrollTop from "../../hooks/usScrollTop";
 export default function Layout({ children }) {
-  let isHidden = useScrollTop(600);
+  let flag = useScrollTop(700);
   return (
     <div className="w-full">
       <Head>
@@ -22,9 +22,7 @@ export default function Layout({ children }) {
       <div className=" layout  flex flex-col min-h-screen ">
         <Header></Header>
         <main className=" flex-1">{children}</main>
-        {isHidden ? (
-          <></>
-        ) : (
+        {flag == false ? (
           <a
             className="cursor-pointer w-8 h-8 mr-3 mb-2  fixed right-0 bottom-0"
             onClick={() => {
@@ -36,6 +34,8 @@ export default function Layout({ children }) {
               <path fill="#fff" d="M48 30.3L32 15 16 30.3h10.6V49h10.3V30.3z" />
             </svg>
           </a>
+        ) : (
+          <></>
         )}
         <Footer></Footer>
       </div>
