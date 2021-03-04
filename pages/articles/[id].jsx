@@ -10,7 +10,7 @@ export default function Post({ postData }) {
         scroll(`#toc-${v.id}`);
       });
     });
-  });
+  }, [true]);
   return (
     <Layout>
       <Head>
