@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 /**
- *  获取文档高度
+ *  获取文档滚动多少
  * @param number height  滚动多少开始显示
  */
 export default function useScrollTo(height) {
