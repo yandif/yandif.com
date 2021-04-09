@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Post({ categoriess }) {
   return (
     <Layout>
-      <div className=" pb-36 w-full px-6 md:w-3/5 mx-auto my-5     ">
+      <div className=" pb-36 w-full px-6 md:w-3/5 mx-auto my-5 ">
         <Head>
           <title>分类</title>
         </Head>
