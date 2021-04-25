@@ -164,8 +164,14 @@ export default function Editor() {
         }
 
         .main-open {
-          margin-left: 428px;
+          margin-left: 0px;
         }
+        @media screen and (min-width: 1000px) {
+          .main-open {
+            margin-left: 428px;
+          }
+        }
+
         main {
           transition: margin-left 0.5s;
           padding: 20px;
