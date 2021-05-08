@@ -32,7 +32,7 @@ export default function Header() {
             {/* 下拉菜单开关 */}
             <div className="md:hidden flex items-center px-5">
               <button
-                onClick={(e) => {
+                onClick={e => {
                   e.stopPropagation();
                   setMenuSwitch(!menuSwitch);
                 }}
@@ -107,12 +107,16 @@ function Menu() {
       path: "/tape",
     },
     {
+      title: "Demo",
+      path: "/demo",
+    },
+    {
       title: "关于",
       path: "/about",
     },
   ];
 
-  menus.map((v) => {
+  menus.map(v => {
     v.regexp = RegExp("^" + v.path + "$", "i");
     return v;
   });
@@ -120,7 +124,7 @@ function Menu() {
 
   return (
     <>
-      {menus.map((menu) => {
+      {menus.map(menu => {
         return (
           <div key={menu.path} className="mb-4 md:m-0">
             <Link href={menu.path}>
