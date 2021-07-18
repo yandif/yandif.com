@@ -4,7 +4,7 @@ export default function Sider() {
     <div className={className.sider}>
       <div className={className.menu}>123</div>
       <div className={className.cardList}>
-        {[1, 2, 3, 5].map((v) => (
+        {[1, 2, 3, 4, 5].map((v) => (
           <Card />
         ))}
       </div>

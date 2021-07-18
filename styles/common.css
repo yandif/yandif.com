@@ -7,6 +7,7 @@ a {
 }      
 body{   
   -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {

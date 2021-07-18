@@ -1,19 +1,30 @@
 .sider {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
   background-color: wheat;
 }
 .menu {
+  flex: 1;
+  height: 100vh;
   background-color: springgreen;
 }
 .cardList {
+  box-sizing: border-box;
+  width: 315px;
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
   background-color: salmon;
+  scrollbar-width: none;
 }
+
 .card {
+  display: inline-block;
   width: 300px;
   height: 150px;
-  margin: 15px;
-
+  margin-top: 15px;
+  margin-right: 15px;
   background-color: red;
 }

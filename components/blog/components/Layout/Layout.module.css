@@ -13,7 +13,7 @@
 
   background-color: #e1e2e3;
 
-  transition: 0.5s;
+  transition: margin-left 0.5s;
 }
 
 .switch {
