@@ -30,7 +30,8 @@
 .mainContainer {
   display: flex;
   justify-content: center;
-  padding: 60px;
+  min-height: 100vh;
+  padding: 20px;
 
   background-color: #fafafa;
 
@@ -39,4 +40,5 @@
 
 .main {
   width: 800px;
+  margin: 40px;
 }
