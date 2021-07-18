@@ -2,17 +2,20 @@ a {
   color: #1e6a9c;
 }
 
-*{
-  -webkit-tap-highlight-color:rgba(255,0,0,0);
-}      
-body{   
-  -ms-overflow-style: none;
+* {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
+html {
   scrollbar-width: none;
+}
+body {
+  -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
   display: none;
-  background-color: #A7D0F2;
+
+  background-color: #a7d0f2;
 }
 
 /* 滚动槽 */
@@ -21,16 +24,17 @@ body::-webkit-scrollbar {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
   border-radius: 3px;
-  background: rgba(0,0,0,0.06);
 }
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
   border-radius: 3px;
-  background: rgba(0,0,0,0.12);
 }
 
-::selection{
-  color:white;
-  background-color:   #1e6a9c;;
+::selection {
+  color: white;
+
+  background-color: #1e6a9c;
 }
