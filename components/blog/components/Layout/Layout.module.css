@@ -1,5 +1,7 @@
 .layout {
-  scrollbar-width: none;
+  height: 100vh;
+  overflow: overlay;
+  scrollbar-width: thin;
 }
 
 .sider {
