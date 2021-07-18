@@ -6,7 +6,7 @@ a {
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
 }
 html {
-  scrollbar-width: none;
+  scrollbar-width: thin;
 }
 body {
   -ms-overflow-style: none;
