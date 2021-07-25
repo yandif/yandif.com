@@ -1,4 +1,5 @@
 import className from "./Main.module.css";
+import { MilkdownEditor } from "../../../editor/Editor";
 export default function Main() {
-  return <>{"哈哈".repeat(10000)}</>;
+  return <MilkdownEditor></MilkdownEditor>;
 }
