@@ -4,9 +4,17 @@
   height: 100vh;
   overflow: hidden;
 }
-.menu {
+
+.menuList {
   flex: 1;
+  max-width: 225px;
   height: 100vh;
+}
+
+.menu {
+  padding-top: 50px;
+  padding-right: 15px;
+  padding-left: 10px;
 }
 
 .cardList {
@@ -28,6 +36,7 @@
   overflow: hidden;
   border-radius: 6px;
 }
+
 .cardContent {
   display: -webkit-box;
   -webkit-box-orient: vertical;
