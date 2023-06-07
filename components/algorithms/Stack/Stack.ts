@@ -1,13 +1,13 @@
 export class Stack<T> {
-  private items: T[];
+  private stack: T[];
 
   constructor() {
-    this.items = [];
+    this.stack = [];
   }
 
   // 入栈
   push(element: T): void {
-    this.items.push(element);
+    this.stack.push(element);
   }
 
   // 出栈
@@ -15,7 +15,7 @@ export class Stack<T> {
     if (this.isEmpty()) {
       return undefined;
     }
-    return this.items.pop();
+    return this.stack.pop();
   }
 
   // 返回栈顶元素
@@ -23,21 +23,21 @@ export class Stack<T> {
     if (this.isEmpty()) {
       return undefined;
     }
-    return this.items[this.items.length - 1];
+    return this.stack[this.stack.length - 1];
   }
 
   // 判断栈是否为空
   isEmpty(): boolean {
-    return this.items.length === 0;
+    return this.stack.length === 0;
   }
 
   // 返回栈的大小
   size(): number {
-    return this.items.length;
+    return this.stack.length;
   }
 
   // 清空栈
   clear(): void {
-    this.items = [];
+    this.stack = [];
   }
 }
