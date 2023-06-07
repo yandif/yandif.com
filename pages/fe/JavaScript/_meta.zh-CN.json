@@ -2,5 +2,6 @@
   "ES6": "ES6 的特性和用法",
   "regex": "正则表达式",
   "algorithms": "数据结构与算法",
-  "redux": "Redux 学习笔记"
+  "redux": "Redux 学习笔记",
+  "react": "React 学习笔记"
 }
