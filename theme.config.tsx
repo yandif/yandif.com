@@ -23,7 +23,7 @@ const config: DocsThemeConfig = {
       }),
   },
   project: {
-    link: 'https://github.com/yandif',
+    link: 'https://github.com/yandif/yandif.com',
   },
   footer: {
     text: () =>
