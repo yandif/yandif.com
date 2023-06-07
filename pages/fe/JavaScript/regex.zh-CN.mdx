@@ -1,0 +1,461 @@
+---
+createDate: 2020-03-21
+---
+### 介绍
+
+正则表达式是表示搜索模式的特殊字符串。它帮助程序员匹配，搜索和替换文本。
+
+正则表达式可能会显得晦涩难懂，因为一些字符具有特殊含义。
+
+目标是将符号和文本组合成一种模式，该模式可以匹配所需的内容，但只能匹配所需的内容。
+
+### 测试
+
+##### 测试正则表达式
+
+测试正则表达式的一种方法是使用 `.test( )`
+
+```js
+let str = 'Yandif';
+let Regex = /Yand/;
+
+Regex.test(str);
+//Returns true
+```
+
+##### 搜索多个字符
+
+搜索多个字符串，您可以使用：`|`
+
+```js
+let str1 = 'I have a pen.';
+let str2 = 'I have an apple.';
+let regex = /pen|apple/;
+
+regex.test(str);
+//Returns true
+regex.test(str);
+//Returns true
+```
+
+##### 忽略大小写
+
+忽略大小写可以使用 : `i`
+
+```js
+let str = 'YANDIF';
+let regex = /yandif/i;
+
+regex.test(str);
+//Returns true
+```
+
+### 匹配
+
+##### 匹配字符串
+
+匹配字符串使用 `.match( )`
+
+返回值是数组
+
+```js
+let str = 'Yandif';
+let regex = /Yandif/;
+
+str.match(regex);
+//Returns ["Yandif"]
+```
+
+##### 匹配所有
+
+执行此操作的字符是：`g`
+
+```js
+let str = 'Repeat, Repeat, Repeat';
+let regex = /Repeat/;
+let repeatRegex = /Repeat/g;
+
+str.match(regex);
+//Returns ["Repeat"]
+
+str.match(repeatRegex);
+//Returns ["Repeat", "Repeat", "Repeat"]
+```
+
+##### 匹配任何内容
+
+执行此操作的字符是：`.`
+
+```js
+let str1 = 'hug';
+let str2 = 'hum';
+let regex = /hu./;
+
+str1.match(regex);
+// Returns true
+
+str2.match(regex);
+// Returns true
+```
+
+##### 匹配多个字符
+
+执行此操作的字符是：`[ ]`
+
+```js
+let bagStr = 'bag';
+let bugStr = 'bug';
+let bogStr = 'bog';
+let regex = /b[au]g/;
+
+bagStr.match(regex);
+// Returns ["bag"]
+
+bugStr.match(regex);
+// Returns ["bug"]
+
+bogStr.match(regex);
+// Returns null
+```
+
+##### 匹配字母
+
+在`[ ]`内，可以使用连字符：`-`
+
+```js
+let catStr = 'cat';
+let batStr = 'bat';
+let bgRegex = /[a-e]at/;
+
+catStr.match(bgRegex);
+// Returns ["cat"]
+
+batStr.match(bgRegex);
+// Returns ["bat"]
+```
+
+##### 匹配数字和字母
+
+```js
+let str = 'Yandif666';
+let myRegex = /[a-z0-9]/gi;
+
+str.match(myRegex);
+//Returns  ["Y", "a", "n", "d", "i", "f", "6", "6", "6"]
+```
+
+##### 匹配取反
+
+执行此操作的字符是：`^`
+
+```js
+let str = 'Yandif';
+let myRegex = /[^Yand]/gi;
+
+str.match(myRegex);
+//Returns  ["i", "f"]
+```
+
+##### 匹配一次或多次的字符
+
+执行此操作的字符是加号：`+`
+
+```js
+let str = 'Yandiiiiif';
+let myRegex = /i+/g;
+
+str.match(myRegex);
+//Returns ["iiiii"]
+```
+
+##### 匹配零次或多次的字符
+
+执行此操作的字符是星号：`*`
+
+```js
+let str1 = 'Aaaaaaa';
+let str2 = 'ABC';
+let regex = /Aa*/;
+
+str1.match(regex);
+//Returns ["Aaaaaaa"]
+
+str2.match(regex);
+//Returns ["A"]
+```
+
+##### 惰性匹配
+
+正则表达式默认是贪婪匹配,贪婪匹配会找到适合正则表达式模式的字符串中最长的部分，并将其返回。
+
+惰性匹配，会找到满足正则表达式模式的字符串的最小可能部分。
+
+执行此操作的字符是：`?`
+
+```js
+let str = '<h1>Yandif</h1>';
+let regex1 = /<.*>/g;
+let regex2 = /<.*?>/g;
+
+str.match(regex1);
+//Return ["<h1>Yandif</h1>"]
+
+str.match(regex2);
+//Return ["<h1>", "</h1>"]
+```
+
+##### 匹配开头
+
+执行此操作的字符是: `^`
+
+```js
+let str1 = 'Yandif';
+let str2 = 'if Yand';
+let regex = /^Yand/;
+
+regex.test(str1);
+// Returns true
+
+regex.test(str2);
+// Returns false
+```
+
+##### 匹配结尾
+
+执行此操作的字符是: `$`
+
+```js
+let str1 = 'Yandif';
+let str2 = 'if Yand';
+let regex = /Yand$/;
+
+regex.test(str1);
+// Returns false
+
+regex.test(str2);
+// Returns true
+```
+
+### 快捷操作
+
+##### 匹配数字和字母
+
+执行此操作的字符是:·`\w`
+
+```js
+let str1 = 'Yandif';
+let str2 = '666';
+let regex = /\w+/;
+
+regex.test(str1);
+// Returns true
+
+regex.test(str2);
+// Returns true
+```
+
+##### 匹配所有除了字母和数字
+
+执行此操作的字符是: `\W`
+
+```js
+let str1 = 'Yandif!';
+let str2 = '42%';
+let regex = /\W/;
+
+str1.match(regex);
+// Returns ["!"]
+
+str2.match(regex);
+// Returns ["%"]
+```
+
+##### 匹配所有数字
+
+执行此操作的字符是: `\d`
+
+```js
+let str = 'Yandif666';
+let regex = /\d/g;
+
+str.match(regex);
+//Returns ["6","6","6"]
+```
+
+##### 匹配所有非数字
+
+执行此操作的字符是:` \D`
+
+```js
+let str = 'Yandif666';
+let regex = /\D/g;
+
+str.match(regex);
+//Returns ["Y", "a", "n", "d", "i", "f"]
+```
+
+##### 匹配空格
+
+执行此操作的字符是: `\s`
+
+相似：`[\r\t\f\n\v]`
+
+```js
+let str = 'Yandif 666';
+let regex = /\s/g;
+
+str.match(regex);
+// Returns [" "]
+```
+
+##### 匹配非空格字符
+
+执行此操作的字符是: `\S`
+
+```js
+let str = 'Yandif 666';
+let regex = /\S/g;
+
+str.match(regex);
+// Returns ["Y", "a", "n", "d", "i", "f", "6", "6", "6"]
+```
+
+##### 指定匹配数上下限
+
+执行此操作的字符是: `{min,max}`
+
+```js
+let str1 = 'aaaah';
+let str2 = 'aah';
+let regex = /a{3,5}h/;
+
+regex.test(str1);
+// Returns true
+
+regex.test(str2);
+// Returns false
+```
+
+##### 仅指定匹配数下限
+
+执行此操作的字符是: `{ min , }`
+
+```js
+let str1 = 'haaaah';
+let str2 = 'h' + 'a'.repeat(100) + 'h';
+let regex = /ha{3,}h/;
+
+regex.test(str1);
+// Returns true
+
+regex.test(str2);
+// Returns true
+```
+
+##### 指定确切的匹配数
+
+执行此操作的字符是: `{ 确切数 }`
+
+```js
+let str1 = 'haaaah';
+let str2 = 'haah';
+let regex = /ha{4}h/;
+
+regex.test(str1);
+// Returns true
+
+regex.test(str2);
+// Returns false
+```
+
+##### 出现零次或一次
+
+执行此操作的字符是: `?`
+
+```js
+let str1 = 'color';
+let str2 = 'colour';
+let regex = /colou?r/;
+
+regex.test(str1);
+// Returns true
+
+regex.test(str2);
+// Returns true
+```
+
+### 前瞻
+
+##### 正向前瞻
+
+执行此操作的字符是: `(?=...)`
+
+匹配后面满足表达式 exp 的位置
+
+```js
+let str = 'Yandif';
+let regex = /Yand(?=if)/;
+
+str.match(regex);
+//Returns ["Yand"]
+```
+
+##### 负向前瞻
+
+执行此操作的字符是: `(?!...)`
+
+匹配后面不满足表达式 exp 的位置
+
+```js
+let str = 'Yandif';
+let regex = /Yand(?!of)/;
+
+str.match(regex);
+//Returns ["Yand"]
+```
+
+### 字符分组
+
+执行此操作的字符是: `( )`
+
+```js
+let str = 'Yandif';
+let regex = /Yand(if|of)/;
+
+regex.test(str);
+// Returns true
+```
+
+### 捕获组重用
+
+执行此操作的字符是: `( )` 和 `\数字` `\1,2,3,4,5...`
+
+```js
+let str = 'regex regex';
+let regex = /(\w+)\s\1/;
+
+regex.test(str);
+// Returns true
+
+str.match(regex);
+// Returns ["regex regex", "regex"]
+```
+
+### 替换
+
+执行此操作的方法是: `.replace( )`
+
+```js
+let str = 'The sky is silver.';
+let regex = /silver/;
+
+str.replace(regex, 'blue');
+// Returns "The sky is blue."
+```
+
+重用捕获组：`$`
+
+```js
+'a b'.replace(/(\w+)\s(\w+)/, '$2 $1');
+// Returns "b a"
+```

@@ -1,0 +1,6 @@
+{
+  "index": { "title": "简介", "type": "page", "display": "hidden" },
+  "fe": { "title": "前端", "type": "page" },
+  "stars": { "title": "收藏", "type": "page" },
+  "about": { "title": "关于", "type": "page" }
+}

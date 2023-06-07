@@ -1,0 +1,48 @@
+{
+  "workbench.colorTheme": "Monokai++ Unified",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "Fira Code",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "none",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.fontSize": 14,
+  "workbench.productIconTheme": "Default",
+  "editor.tokenColorCustomizations": { "comments": "#17e917" },
+  "editor.fontLigatures": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "prettier.requireConfig": true,
+  "files.associations": {
+    "*.tsx": "typescriptreact"
+  },
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

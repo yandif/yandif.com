@@ -1,0 +1,841 @@
+---
+createDate: 2020-03-21
+---
+import { Tab, Tabs } from 'nextra-theme-docs';
+
+### let 关键字
+
+#### 不允许重复声明
+
+在同一作用域内，使用 `let`
+声明的变量不能被重复声明。如果尝试重新声明同名变量，会导致语法错误。
+
+使用 `var` 关键字声明变量时，可以重复声明变量，而不会报错。
+
+```js copy
+var myName = 'Yandif';
+var myName = '...';
+console.log(myName); // 打印 '...'
+```
+
+替换为 `let`，则会报错。
+
+```js copy
+let myName = 'Yandif';
+let myName = '...';
+// Uncaught SyntaxError: Identifier 'myName' has already been declared
+```
+
+#### 块级作用域
+
+使用`let`声明的变量具有块级作用域，仅在声明的块内部有效。
+
+```js copy
+'use strict';
+let printNumTwo;
+for (let i = 0; i < 3; i++) {
+  if (i === 2) {
+    printNumTwo = function () {
+      return i;
+    };
+  }
+}
+console.log(printNumTwo()); // 2
+console.log(i); // Uncaught ReferenceError: i is not defined
+```
+
+#### 不会变量提升
+
+使用 `let` 声明的变量不会像 `var` 那样发生变量提升。
+
+```js copy
+console.log(a); // Uncaught ReferenceError: a is not defined
+let a = 'a';
+```
+
+```js copy
+console.log(a); // => undefined
+var a = 'a';
+```
+
+### const 关键字
+
+`const` 具有与 `let` 相似的作用域和块级作用域特性。
+
+使用 `const`声明的变量为常量。不能重新赋值。
+
+使用 `const` 声明的变量在声明时必须进行初始化。
+
+```js copy
+'use strict';
+const PET = 'Cats';
+PET = 'Dogs'; // Uncaught TypeError: Assignment to constant variable.
+```
+
+```js copy
+const ANIMAL; // Uncaught SyntaxError: Missing initializer in const declaration
+```
+
+> 通常使用大写字母表示不可变的值（常量），而使用小写字母或驼峰命名法表示可变的值（变量）
+
+#### 更改 const 声明的数组
+
+使用 `const`
+声明的对象和数组。虽然本身不能重新赋值，但是可以修改对象和数组的属性或元素
+
+```js copy
+'use strict';
+const s = [5, 6, 7];
+s[2] = 45;
+console.log(s); //[5, 6, 45]
+s = [1, 2, 3]; //Uncaught TypeError: Assignment to constant variable.
+```
+
+> JavaScript 提供了一个 `Object.freeze`
+> 函数来防止数据改变。冻结对象后，便无法再从中添加，更新或删除属性。更改对象的任何尝试都会被拒绝，不会报错。
+>
+> ```js copy
+> let obj = {
+>   name: 'Yandif',
+> };
+> Object.freeze(obj);
+> obj.name = '...'; // 会被忽视
+> obj.newProp = 'Test'; // 会被忽视
+> console.log(obj);
+> // { name:"Yandif" }
+> ```
+
+### 箭头函数
+
+#### 概念
+
+在 JavaScript 中，在将一个函数作为参数传递给另一个函数时。
+
+通常不需要命名这些函数，因为不会在其他地方重用它们。
+
+ES6 提供了箭头函数语法糖：
+
+```js copy
+const myFunc = () => {
+  const myVar = 'value';
+  return myVar;
+};
+```
+
+#### 特殊情况
+
+当没有函数体，只有一个返回值时，箭头函数语法使您可以省略关键字 `return`
+以及代码周围的括号：
+
+`const myFunc = () => 'value';{:js}`
+
+就像常规函数一样，您可以将参数传递给箭头函数
+
+`const doubler = (item) => item * 2;{:js}`
+
+如果箭头函数具有单个参数，则可以省略包围该参数的括号：
+
+`const doubler = item => item * 2{:js}`
+
+可以将多个参数传递给箭头函数：
+
+`const multiplier = (item, multi) => item * multi;{:js}`
+
+### 默认参数
+
+ES6 引入了函数的默认参数，使我们能够在函数定义时为参数提供默认值。
+
+```js copy
+const greeting = (name = 'Yandif') => 'Hello ' + name;
+
+console.log(greeting('Yand')); // Hello Yand
+console.log(greeting()); // Hello Yandif
+```
+
+如果没有传递该参数或传递的值为 `undefined` ，则会启动默认参数。
+
+> 传递 `null` 还是会使用 `null`, 而不是使用默认参数。
+
+### 模板字符串
+
+ES6 引入了模板字符串，可以通过 `${}` 嵌入表达式和变量，并支持多行字符串。
+
+```js copy
+const person = {
+  name: 'Yandif',
+  age: 18,
+};
+
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting);
+// prints
+// Hello, my name is Yandif!
+// I am 18 years old.
+```
+
+### 解构赋值
+
+可以通过模式匹配的方式从数组或对象中提取值，赋值给变量。
+
+#### 解构对象
+
+##### 基础语法
+
+```js copy
+const user = { name: 'Yandif', age: 20 };
+/*
+const name = user.name;
+const age = user.age;
+*/
+
+const { name, age } = user; // 解构分配
+```
+
+##### 解构时分配变量名
+
+```js copy
+const user = { name: 'Yandif', age: 20 };
+const { name: userName, age: userAge } = user;
+//  userName: 'Yandif'
+//  userAge : 20
+```
+
+##### 解构嵌套对象
+
+初始对象：
+
+```js copy
+const user = {
+  Yandif: {
+    age: 20,
+    email: 'test@yandif.com',
+  },
+};
+```
+
+解构对象
+
+```js copy
+const {
+  Yandif: { age, email },
+} = user;
+//变量age 20
+//变量email 'test@yandif.com'
+```
+
+分配变量名
+
+```js copy
+const {
+  Yandif: { age: userAge, email: userEmail },
+} = user;
+```
+
+#### 解构数组
+
+##### 基础语法
+
+```js copy
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+```
+
+##### 特殊情况
+
+使用逗号到达所需索引来解构数组中任何索引的值：
+
+```js copy
+const [a, b, , , c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c); // 1, 2, 5
+```
+
+##### 其余元素
+
+将解构后的其余元素分配给一个数组。
+
+```js copy
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b); // 1, 2
+console.log(arr); // [3, 4, 5, 7]
+```
+
+#### 函数参数解构
+
+```js copy
+//ES5
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+};
+
+//ES6
+const profileUpdate = ({ name, age, nationality, location }) => {};
+```
+
+### Spread 运算符
+
+ES6 引入了 Spread
+运算符，它可以在需要多个参数或元素的地方将数组、对象或表达式展开。
+
+#### 展开数组
+
+```js copy
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5, 6];
+console.log(arr2); // [1, 2, 3, 4, 5, 6]
+```
+
+#### 展开对象
+
+```js copy
+const obj1 = { name: 'Yandif', age: 30 };
+const obj2 = { ...obj1, city: 'Shanghai' };
+console.log(obj2); // {name: 'Yandif', age: 30, city: 'Shanghai'}
+```
+
+#### 传递函数参数
+
+```js copy
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [1, 2, 3];
+const result = sum(...numbers);
+console.log(result); // 6
+```
+
+### rest 参数
+
+ES6 引入了 rest 参数作为函数参数。
+
+使用 rest 参数，可以创建带有可变数量参数的函数。
+
+这些参数存储在一个数组中，可以从函数内部进行访问。
+
+```js copy
+function howMany(...args) {
+  return 'You have passed ' + args.length + ' arguments.';
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments.
+console.log(howMany('string', null, [1, 2, 3], {})); // You have passed 4 arguments
+```
+
+使用 rest 参数可以让函数处理不定数量的参数，而不需要显式地定义每个参数。
+
+```js copy
+const sum = (...args) => {
+  return args.reduce((a, b) => a + b, 0);
+};
+console.log(sum(1, 2, 3)); // 6
+```
+
+### 类
+
+ES6 提供了使用 `class` 关键字创建对象的语法。
+
+#### 定义类
+
+使用 `class` 关键字来定义一个类，后面紧跟类名，通常首字母大写。
+
+```js copy
+class MyClass {
+  // 类的定义
+}
+```
+
+#### 构造函数
+
+类可以包含一个特殊的方法，称为构造函数，用于创建类的实例。
+
+```js copy
+class MyClass {
+  constructor() {
+    // 构造函数
+  }
+}
+```
+
+#### 类方法
+
+类可以定义自己的方法，这些方法将成为类的实例的方法。
+
+```js copy
+class MyClass {
+  constructor() {
+    // 构造函数
+  }
+
+  myMethod() {
+    // 类方法
+  }
+}
+```
+
+#### 实例化类
+
+使用 `new` 关键字和类名来实例化一个类，并创建类的实例。
+
+```js copy
+const myObject = new MyClass();
+```
+
+#### 类属性
+
+类可以定义静态属性和实例属性。
+
+静态属性是属于类本身的属性，可以通过类名直接访问。
+
+```js copy
+class MyClass {
+  static myStaticProperty = 123;
+}
+
+console.log(MyClass.myStaticProperty); // 123
+```
+
+实例属性是每个类实例都拥有的属性，需要在构造函数或其他方法中定义。
+
+```js copy
+class MyClass {
+  constructor() {
+    this.myInstanceProperty = 456;
+  }
+}
+
+const myObject = new MyClass();
+console.log(myObject.myInstanceProperty); // 456
+```
+
+#### 定义子类
+
+使用 `extends` 关键字来创建一个子类，后面跟着父类的类名。
+
+```js copy
+class ChildClass extends ParentClass {
+  // 子类的定义
+}
+```
+
+#### super
+
+在子类的构造函数中，使用 `super` 关键字调用父类的构造函数，并传递必要的参数。
+
+```js copy
+class ChildClass extends ParentClass {
+  constructor() {
+    super(); // 调用父类的构造函数
+    // 子类的构造函数
+  }
+}
+```
+
+#### 方法重写
+
+子类可以重写继承自父类的方法，以改变其行为或添加新的功能。
+
+```js copy
+class ChildClass extends ParentClass {
+  myMethod() {
+    // 重写父类方法
+  }
+}
+```
+
+#### 访问父类方法
+
+在子类中，可以使用 `super` 关键字访问父类的方法。
+
+```js copy
+class ChildClass extends ParentClass {
+  myMethod() {
+    super.myMethod(); // 调用父类的方法
+    // 子类的方法逻辑
+  }
+}
+```
+
+#### 静态方法继承
+
+子类可以继承父类的静态方法。
+
+```js copy
+class ChildClass extends ParentClass {
+  static myStaticMethod() {
+    super.myStaticMethod(); // 调用父类的静态方法
+    // 子类的静态方法逻辑
+  }
+}
+```
+
+### 简化的对象字面量语法
+
+ES6 引入了一种简化的对象字面量语法，使得创建对象更加简洁和直观。
+
+<Tabs items={['ES6', 'ES5']}><Tab>
+
+```js copy
+// ES6 的简化对象字面量语法
+const name = 'John';
+const age = 30;
+
+const person = {
+  name,
+  age,
+  sayHello() {
+    console.log(`Hello, ${this.name}`);
+  },
+};
+```
+
+</Tab><Tab>
+
+```js copy
+// ES5 的对象字面量语法
+var name = 'John';
+var age = 30;
+
+var person = {
+  name: name,
+  age: age,
+  sayHello: function () {
+    console.log('Hello,' + this.name);
+  },
+};
+```
+
+</Tab></Tabs>
+
+### 简化的 getter 和 setter
+
+getter 和 setter 在 ES5 中被引入并得到支持，ES6
+做了简化和改进，可以直接在对象字面量中定义。
+
+<Tabs items={['ES6', 'ES5']}><Tab>
+
+```js copy
+let objES6 = {
+  _count: 0,
+  get count() {
+    return this._count;
+  },
+  set count(value) {
+    this._count = value;
+  },
+};
+
+console.log(objES6.count); // 0
+objES6.count = 1;
+console.log(objES6.count); // 1
+```
+
+</Tab><Tab>
+
+```js copy
+var objES5 = {
+  _count: 0,
+};
+
+Object.defineProperty(objES5, 'count', {
+  get: function () {
+    return this._count;
+  },
+  set: function (value) {
+    this._count = value;
+  },
+});
+
+console.log(objES5.count); // 0
+objES5.count = 1;
+console.log(objES5.count); // 1
+```
+
+</Tab></Tabs>
+
+### 迭代器和生成器
+
+ES6 引入了迭代器 Iterator 和生成器 Generator 。
+
+#### 迭代器
+
+迭代器是一个对象，它提供了一种统一的方式来遍历集合中的元素。它包含一个 `next()`
+方法，每次调用该方法都会返回一个包含 value 和 done 属性的对象。value
+表示当前迭代的值，done 表示迭代是否已完成。
+
+```js copy
+let myIterable = {
+  [Symbol.iterator]: function () {
+    var items = ['apple', 'banana', 'cherry'];
+    var index = 0;
+
+    return {
+      next: function () {
+        if (index < items.length) {
+          return { value: items[index++], done: false };
+        } else {
+          return { value: undefined, done: true };
+        }
+      },
+    };
+  },
+};
+
+for (let item of myIterable) {
+  console.log(item);
+}
+// "apple", "banana", "cherry"
+```
+
+#### 生成器
+
+生成器是一个函数，它可以通过使用 `function*` 语法定义，并使用 `yield`
+关键字暂停和恢复函数的执行。生成器函数可以返回一个迭代器对象，通过调用迭代器对象的
+`next()` 方法来遍历生成的值。
+
+```js copy
+function* myGenerator() {
+  yield 'apple';
+  yield 'banana';
+  yield 'cherry';
+}
+
+var iterator = myGenerator();
+
+console.log(iterator.next().value); // "apple"
+console.log(iterator.next().value); // "banana"
+console.log(iterator.next().value); // "cherry"
+```
+
+> 生成器函数可以使用 `yield` 暂停函数的执行，并将值返回给调用方。当再次调用
+> `next()` 方法时，函数将从上次暂停的位置恢复执行，并继续生成下一个值。
+
+### Promise
+
+ES6 引入了 Promise ，用于处理 JavaScript 中的异步操作。
+
+Promise 构造函数接受一个执行器函数作为参数，该函数包含两个参数：resolve 和
+reject。在执行器函数内部可以执行异步操作，并使用 resolve
+函数来标志操作成功完成，并返回结果值；或使用 reject
+函数来标志操作失败，并返回一个错误原因。
+
+它有三种状态：
+
+- 进行中（Pending）
+- 已完成（Fulfilled）
+- 已拒绝（Rejected）
+
+```js copy
+const myPromise = new Promise((resolve, reject) => {
+  if (Math.random() > 0.5) {
+    resolve('成功');
+  } else {
+    reject('拒绝');
+  }
+});
+
+myPromise.then((result) => {
+  console.log(result);
+});
+
+myPromise.catch((error) => {
+  console.log(error);
+});
+```
+
+`.then()` 方法接收一个回调函数作为参数，该回调函数在 Promise
+对象的状态变为成功时被调用，并接收 Promise 解决（resolve）的值作为参数。
+
+`.catch()` 方法接收一个回调函数作为参数，该回调函数在 Promise
+对象的状态变为失败时被调用，并接收 Promise 拒绝（reject）的原因作为参数。
+
+`.then()` 方法和 `.catch()` 方法都返回一个新的 Promise 对象，可以进行链式调用。
+
+### 模块
+
+ES6 引入了一种在 JavaScript 文件之间轻松共享代码的方法。
+
+这涉及导出文件的一部分以供一个或多个其他文件使用，并在需要的地方导入所需的部分。
+
+为了利用此功能，您需要在 HTML 文档中使用一种模块类型创建脚本。
+
+```html
+<script type="module" src="filename.js"></script>
+```
+
+#### export
+
+```js copy filename="math_functions.js"
+const add = (x, y) => {
+  return x + y;
+};
+export { add };
+
+export const subtract = (x, y) => {
+  return x - y;
+};
+
+// export { add, subtract };
+```
+
+#### import
+
+```js copy
+import { add } from './math_functions.js';
+
+// import { add, subtract } from './math_functions.js';
+```
+
+#### 导入所有内容
+
+```js copy
+import * as myMathModule from './math_functions.js';
+
+myMathModule.add(1, 2); //3
+myMathModule.subtract(1, 2); //-1
+```
+
+#### 默认导出
+
+```js copy
+// 命名函数
+export default function add(x, y) {
+  return x + y;
+}
+
+// 匿名函数
+export default function (x, y) {
+  return x + y;
+}
+```
+
+#### 导入默认导出
+
+```js copy
+import add from './math_functions.js';
+```
+
+### 新增的数据结构
+
+#### Set
+
+Set 是一种无序且不重复的集合。
+
+它的主要特点是：
+
+- 不允许重复的值
+- 无序性，即元素的顺序不是固定的
+
+```js copy
+// 创建 Set
+const set = new Set([1, 2, 3]);
+
+// 新增元素
+set.add(4);
+
+// 检查元素是否存在
+set.has(4);
+
+//删除元素
+set.delete(4);
+```
+
+#### WeakSet
+
+它是一种特殊的 Set，只能存储对象的弱引用（weak reference）。
+
+```js copy
+const weakSet = new WeakSet();
+
+const obj1 = { name: 'Object 1' };
+const obj2 = { name: 'Object 2' };
+
+// 添加对象引用
+weakSet.add(obj1);
+weakSet.add(obj2);
+
+// 检查对象引用是否存在
+console.log(weakSet.has(obj1)); // true
+console.log(weakSet.has(obj2)); // true
+
+// 删除对象引用
+weakSet.delete(obj1);
+console.log(weakSet.has(obj1)); // false
+```
+
+#### Map
+
+Map 是一种键值对的集合，其中每个键只能出现一次。
+
+它的主要特点是：
+
+- 键值对之间的映射关系
+- 键可以是任意类型的值
+
+```js copy
+const map = new Map();
+
+const key1 = 'key1';
+const key2 = { id: 2 };
+const key3 = function () {};
+
+// 添加键值对
+map.set(key1, 'value1');
+map.set(key2, 'value2');
+map.set(key3, 'value3');
+
+// 获取值
+console.log(map.get(key1)); // 'value1'
+console.log(map.get(key2)); // 'value2'
+
+// 检查键是否存在
+console.log(map.has(key3)); // true
+
+// 删除键值对
+map.delete(key1);
+console.log(map.has(key1)); // false
+
+// 迭代键值对
+map.forEach((value, key) => {
+  console.log(key, value);
+});
+
+// 获取键的迭代器
+const keys = map.keys();
+console.log(keys.next().value); // key2
+
+// 获取值的迭代器
+const values = map.values();
+console.log(values.next().value); // 'value2'
+
+// 获取键值对的迭代器
+const entries = map.entries();
+console.log(entries.next().value); // [key2, 'value2']
+```
+
+#### WeakMap
+
+它是一种特殊的 Map，其中键只能是对象，并且对于键引用的对象是弱引用（weak reference），不会阻止垃圾回收器回收它们。
+
+```js copy
+const weakMap = new WeakMap();
+
+const obj1 = {};
+const obj2 = {};
+
+// 设置键值对
+weakMap.set(obj1, 'value1');
+weakMap.set(obj2, 'value2');
+
+// 获取值
+console.log(weakMap.get(obj1)); // 'value1'
+console.log(weakMap.get(obj2)); // 'value2'
+
+// 检查键是否存在
+console.log(weakMap.has(obj1)); // true
+console.log(weakMap.has(obj2)); // true
+
+// 删除键值对
+weakMap.delete(obj1);
+console.log(weakMap.has(obj1)); // false
+```
