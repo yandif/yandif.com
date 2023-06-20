@@ -21,6 +21,7 @@
 - [带你入门前端工程](https://woai3c.github.io/introduction-to-front-end-engineering/)
 - [图解 React 原理](https://7km.top/)
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
+- [3d 编程](https://yyc-git.github.io/3dProgramPattern/)
 
 ### 后端
 
