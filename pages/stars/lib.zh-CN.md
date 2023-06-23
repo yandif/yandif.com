@@ -33,6 +33,7 @@
 
 ### CSS in JS
 
+- [panda](https://panda-css.com/)
 - [Styled Components](https://styled-components.com/)
 - [Emotion](https://emotion.sh/docs/introduction)
 - [UnoCSS](https://unocss.dev/)
