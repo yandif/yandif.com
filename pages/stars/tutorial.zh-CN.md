@@ -22,6 +22,7 @@
 - [图解 React 原理](https://7km.top/)
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 - [3d 编程](https://yyc-git.github.io/3dProgramPattern/)
+- [totaltypescript](https://www.totaltypescript.com/)
 
 ### 后端
 

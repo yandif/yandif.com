@@ -5,3 +5,5 @@
 - [CSS-tricks](https://css-tricks.com/)
 - [京东零售](https://jelly.jd.com/)
 - [muyunyun](https://muyunyun.cn/)
+- [GaoLi's Blog](https://gaoli.me/)
+- [前端文章](https://github.com/woai3c/Front-end-articles)
