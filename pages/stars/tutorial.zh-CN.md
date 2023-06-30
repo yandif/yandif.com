@@ -28,3 +28,7 @@
 
 - [Learn and share SQL](https://livesql.oracle.com/)
 - [Rust 语言圣经](https://course.rs/about-book.html)
+
+### 设计
+
+- [hype4](https://hype4.academy/)
