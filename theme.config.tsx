@@ -5,8 +5,8 @@ import { useRouter } from 'next/router';
 const config: DocsThemeConfig = {
   logo: () =>
     useLocalesMap({
-      'zh-CN': '学习笔记',
-      'en-US': 'notes',
+      'zh-CN': '杂论',
+      'en-US': 'Miscellany',
     }),
   editLink: {
     text: () =>
