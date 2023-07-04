@@ -3,11 +3,14 @@ import useLocalesMap from './components/use-locales-map';
 import { useRouter } from 'next/router';
 
 const config: DocsThemeConfig = {
-  logo: () =>
-    useLocalesMap({
-      'zh-CN': '杂论',
-      'en-US': 'Miscellany',
-    }),
+  logo: () => (
+    <h1 style={{ fontSize: 20, color: '#228BE6' }}>
+      {useLocalesMap({
+        'zh-CN': '杂论',
+        'en-US': 'Miscellany',
+      })}
+    </h1>
+  ),
   editLink: {
     text: () =>
       useLocalesMap({
