@@ -7,4 +7,4 @@
 - [React hooks 的思考](https://2019.wattenberger.com/blog/react-hooks)
 - [rollup 插件](https://github.com/rollup/plugins)
 - [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
-- [深入理解 Javascript 之 Module](https://darjun.github.io/2018/12/20/javascript-module/)
+- [ ] [深入理解 Javascript 之 Module](https://darjun.github.io/2018/12/20/javascript-module/)
