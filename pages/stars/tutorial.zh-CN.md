@@ -34,3 +34,11 @@
 ### 设计
 
 - [hype4](https://hype4.academy/)
+
+### 计算机
+
+- [计算机自学指南](https://csdiy.wiki/)
+
+### 算法与数据结构
+
+- [hello 算法](https://www.hello-algo.com/)
