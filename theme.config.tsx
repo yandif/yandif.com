@@ -28,13 +28,34 @@ const config: DocsThemeConfig = {
   project: {
     link: 'https://github.com/yandif/yandif.com',
   },
-  footer: {
-    text: () =>
-      useLocalesMap({
-        'zh-CN': '文档',
-        'en-US': 'DOCS',
-      }),
+  docsRepositoryBase: 'https://github.com/yandif/yandif.com/blob/main/',
+  useNextSeoProps() {
+    const { asPath } = useRouter();
+    if (!asPath || asPath === '/') {
+      return {
+        titleTemplate: '杂论',
+      };
+    }
+
+    return {
+      titleTemplate: '%s – 杂论',
+    };
   },
+  footer: {
+    text: () => {
+      const title = useLocalesMap({
+        'zh-CN': '杂论',
+        'en-US': 'Miscellany',
+      });
+
+      return (
+        <div>
+          © {new Date().getFullYear()} {title}
+        </div>
+      );
+    },
+  },
+
   toc: {
     title: () =>
       useLocalesMap({
