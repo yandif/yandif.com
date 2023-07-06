@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { camelCase, lowerCase, snakeCase, startCase, upperCase } from 'lodash';
+import { useState } from 'react';
 
-export function Tool() {
+export function CaseTool() {
   const [text, setText] = useState();
   return (
     <div>

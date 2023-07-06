@@ -1,5 +1,5 @@
 import { DocsThemeConfig } from 'nextra-theme-docs';
-import useLocalesMap from './components/use-locales-map';
+import useLocalesMap from './hooks/use-locales-map';
 import { useRouter } from 'next/router';
 
 const config: DocsThemeConfig = {
