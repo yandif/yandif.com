@@ -1,6 +1,6 @@
+import { useRouter } from 'next/router';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 import useLocalesMap from './hooks/use-locales-map';
-import { useRouter } from 'next/router';
 
 const config: DocsThemeConfig = {
   logo: () => (
@@ -42,18 +42,32 @@ const config: DocsThemeConfig = {
     };
   },
   footer: {
-    text: () => {
-      const title = useLocalesMap({
-        'zh-CN': '杂论',
-        'en-US': 'Miscellany',
-      });
-
-      return (
-        <div>
-          © {new Date().getFullYear()} {title}
-        </div>
-      );
-    },
+    text: () =>
+      useLocalesMap({
+        'zh-CN': (
+          <p className="nx-text-sm">
+            除非另有说明，所有文章均根据{' '}
+            <a
+              className="nx-text-primary-600"
+              href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
+              target="_blank">
+              BY-NC-SA
+            </a>{' '}
+            进行许可。
+          </p>
+        ),
+        'en-US': (
+          <p>
+            All articles are licensed under{' '}
+            <a
+              href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en"
+              target="_blank">
+              BY-NC-SA
+            </a>{' '}
+            unless stating additionally.
+          </p>
+        ),
+      }),
   },
 
   toc: {
@@ -78,6 +92,21 @@ const config: DocsThemeConfig = {
           month: 'long',
           year: 'numeric',
         })}
+      </>
+    );
+  },
+  head() {
+    const description = useLocalesMap({
+      'zh-CN': 'Yandif 的个人博客。',
+      'en-US': 'Yandif’s Blog.',
+    });
+    return (
+      <>
+        <meta name="theme-color" content="#fff" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="Content-Language" content="en" />
+        <meta name="description" content={description} />
+        <link rel="icon" href="/yandif.svg" />
       </>
     );
   },
