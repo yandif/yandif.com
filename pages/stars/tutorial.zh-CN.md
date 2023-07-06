@@ -4,6 +4,7 @@
 - [Rico 的备忘单](https://devhints.io/)
 - [学习 GIT 分支](https://learngitbranching.js.org/?locale=zh_CN)
 - [学习正则表达式](https://regexlearn.com/zh-cn)
+- [leetcode](https://leetcode.cn/)
 
 ### 前端
 
