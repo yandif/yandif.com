@@ -26,6 +26,7 @@
 - [totaltypescript](https://www.totaltypescript.com/)
 - [flexboxdefense](http://www.flexboxdefense.com/)
 - [千古前端图文教程](https://github.com/qianguyihao/Web)
+- [木易杨前端进阶](https://muyiy.cn/blog/) ⭐ 前端进阶
 
 ### 后端
 
