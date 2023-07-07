@@ -16,3 +16,8 @@
 
 - [京东零售](https://jelly.jd.com/) 前端、设计
 - [CSS-tricks](https://css-tricks.com/) CSS 技巧
+
+### 其他
+
+- [HelloGitHub](https://hellogithub.com/) 开源项目推荐
+- [best of js](https://bestofjs.com/) js 库推荐
