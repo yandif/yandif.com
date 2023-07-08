@@ -11,6 +11,7 @@
 - [Surmon 的博客](https://surmon.me/) 前端
 - [Otstar Lin 的博客](https://blog.ixk.me/) 前端
 - [谭光志 的前端文章](https://github.com/woai3c/Front-end-articles) 前端
+- [拾一 的博客](https://innei.in/) 前端
 
 ### 公司博客
 
