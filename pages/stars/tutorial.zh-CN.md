@@ -40,6 +40,7 @@
 ### 计算机
 
 - [计算机自学指南](https://csdiy.wiki/)
+- [深入架构原理与落地实践](https://github.com/isno/theByteBook)
 
 ### 算法与数据结构
 
