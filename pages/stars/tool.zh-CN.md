@@ -10,6 +10,7 @@
 - [npm 包比较](https://npmtrends.com/)
 - [neovim](https://neovim.io/)
 - [PPT AI](https://gamma.app/)
+- [简历生成器](https://open-resume.yandif.com)
 
 ### 工具集
 
