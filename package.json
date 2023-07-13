@@ -19,7 +19,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "20.4.1",
+    "@types/node": "20.4.2",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog-chinese": "^2.3.0",
     "typescript": "^5.1.6"
