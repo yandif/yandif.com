@@ -27,6 +27,8 @@
 - [flexboxdefense](http://www.flexboxdefense.com/)
 - [千古前端图文教程](https://github.com/qianguyihao/Web)
 - [木易杨前端进阶](https://muyiy.cn/blog/) ⭐ 前端进阶
+- [简洁的 TypeScript 之书](https://github.com/gibbok/typescript-book/blob/main/README-zh_CN.md#%E4%BB%8B%E7%BB%8D)
+- [前端知识汇总](https://github.com/qdleader/qdleader)
 
 ### 后端
 
