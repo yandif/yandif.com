@@ -10,3 +10,5 @@
 - [ ] [rollup 插件](https://github.com/rollup/plugins)
 - [ ] [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
 - [ ] [深入理解 Javascript 之 Module](https://darjun.github.io/2018/12/20/javascript-module/)
+- [ ] [2023 再看 React 状态管理库](https://juejin.cn/post/7195513281228898363#heading-28)
+ 
