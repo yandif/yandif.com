@@ -33,7 +33,8 @@
 
 ### CSS in JS
 
-- [panda](https://panda-css.com/)
+- [panda](https://panda-css.com/) 支持 RSC
+- [kuma-ui](https://www.kuma-ui.com/) 支持 RSC
 - [Styled Components](https://styled-components.com/)
 - [Emotion](https://emotion.sh/docs/introduction)
 - [UnoCSS](https://unocss.dev/)
