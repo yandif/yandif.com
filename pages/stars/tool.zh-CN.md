@@ -11,7 +11,7 @@
 - [neovim](https://neovim.io/)
 - [PPT AI](https://gamma.app/)
 - [简历生成器](https://open-resume.yandif.com)
-
+- [颜色生成器](https://colors.eva.design/)
 ### 工具集
 
 - [AI 工具导航](https://ai-bot.cn/)
