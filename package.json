@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "commit": "git-cz"
+    "commit": "git-cz && git push"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.6.9",
