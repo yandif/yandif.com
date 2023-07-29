@@ -987,7 +987,7 @@ RPC是一种请求-响应协议：
 
 示例RPC调用：
 
-```
+```http
 GET /someoperation?data=anId
 
 POST /anotheroperation
