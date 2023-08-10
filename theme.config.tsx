@@ -6,8 +6,8 @@ const config: DocsThemeConfig = {
   logo: () => (
     <h1 style={{ fontSize: 20, color: '#228BE6' }}>
       {useLocalesMap({
-        'zh-CN': '杂论',
-        'en-US': 'Miscellany',
+        'zh-CN': '自然の札记',
+        'en-US': 'Nature notes',
       })}
     </h1>
   ),
