@@ -33,12 +33,12 @@ const config: DocsThemeConfig = {
     const { asPath } = useRouter();
     if (!asPath || asPath === '/') {
       return {
-        titleTemplate: '杂论',
+        titleTemplate: '自然の札记',
       };
     }
 
     return {
-      titleTemplate: '%s – 杂论',
+      titleTemplate: '%s',
     };
   },
   footer: {
