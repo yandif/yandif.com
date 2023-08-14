@@ -19,7 +19,7 @@
 - [CSS-tricks](https://css-tricks.com/) CSS 技巧
 
 ### 其他
-
+- [平替生活](https://cheapy.top/about/)
 - [HelloGitHub](https://hellogithub.com/) 开源项目推荐
 - [best of js](https://bestofjs.com/) js 库推荐
 
