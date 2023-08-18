@@ -16,3 +16,6 @@
 
 - [AI 工具导航](https://ai-bot.cn/)
 - [在线工具](https://tool.lu/)
+
+### CSS 工具
+- [shadows 生成](https://shadows.brumm.af)
