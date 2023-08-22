@@ -12,6 +12,8 @@
 - [PPT AI](https://gamma.app/)
 - [简历生成器](https://open-resume.yandif.com)
 - [颜色生成器](https://colors.eva.design/)
+- [图片放大](https://bigjpg.com/zh)
+
 ### 工具集
 
 - [AI 工具导航](https://ai-bot.cn/)
