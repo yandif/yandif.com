@@ -29,3 +29,6 @@
 <!-- https://7gugu.com/ -->
 <!-- https://www.lateautumn.cn/posts/2022-sumup -->
 <!-- https://yogwang.site/about/ -->
+<!-- https://xiangshu233.cn/ -->
+<!-- https://wiki.7wate.com/ -->
+<!-- https://docs.shanyuhai.top/ -->
