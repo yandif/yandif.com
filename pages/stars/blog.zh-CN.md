@@ -12,6 +12,7 @@
 - [Otstar Lin 的博客](https://blog.ixk.me/) 前端
 - [谭光志 的前端文章](https://github.com/woai3c/Front-end-articles) 前端
 - [拾一 的博客](https://innei.in/) 前端
+- [飞跃高山与大洋的鱼 的博客](https://docs.shanyuhai.top/) 前端笔记
 
 ### 公司博客
 
