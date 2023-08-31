@@ -2,7 +2,7 @@
 
 ### TODO
 
-- [ ] Kitten-ui 重构
+- [x] Kitten-ui 重构
 - [ ] 学习算法与数据结构
 - [ ] 写一个 nextra 主题
 - [ ] 翻译 learn-javascript
