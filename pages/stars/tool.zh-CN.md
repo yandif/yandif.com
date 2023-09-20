@@ -22,5 +22,7 @@
 ### CSS 工具
 - [shadows 生成](https://shadows.brumm.af)
 
+### PPT
+- [PPT 模版](https://www.ypppt.com/)
 <!-- https://jsbench.me/ -->
 <!-- https://codeium.com/ -->
