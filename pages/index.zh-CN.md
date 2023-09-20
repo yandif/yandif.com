@@ -7,6 +7,7 @@
 - [ ] 学习算法与数据结构
 - [ ] 写一个 nextra 主题
 - [ ] 翻译 learn-javascript
+- [ ] prettier 可视化配置？
 
 ### 要了解的概念
 
