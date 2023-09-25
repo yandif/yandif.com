@@ -24,5 +24,7 @@
 
 ### PPT
 - [PPT 模版](https://www.ypppt.com/)
+
+### AI 工具
+- [codeium](https://codeium.com/)
 <!-- https://jsbench.me/ -->
-<!-- https://codeium.com/ -->
