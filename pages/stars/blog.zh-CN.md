@@ -13,6 +13,7 @@
 - [谭光志 的前端文章](https://github.com/woai3c/Front-end-articles) 前端
 - [拾一 的博客](https://innei.in/) 前端
 - [飞跃高山与大洋的鱼 的博客](https://docs.shanyuhai.top/) 前端笔记
+- [孟科 的博客](https://www.mengke.me/)
 
 ### 公司博客
 
@@ -20,13 +21,10 @@
 - [CSS-tricks](https://css-tricks.com/) CSS 技巧
 
 ### 其他
-- [平替生活](https://cheapy.top/about/)
+<!-- - [平替生活](https://cheapy.top/about/)  -->
 - [HelloGitHub](https://hellogithub.com/) 开源项目推荐
-- [best of js](https://bestofjs.com/) js 库推荐
+- [best of js](https://bestofjs.org/) js 库推荐
 
-<!-- https://blog.othing.xyz/ -->
-<!-- https://uocat.com/ -->
-<!-- https://7gugu.com/ -->
 <!-- https://www.lateautumn.cn/posts/2022-sumup -->
 <!-- https://yogwang.site/about/ -->
 <!-- https://xiangshu233.cn/ -->
@@ -40,4 +38,3 @@
 <!-- https://willbchang.notion.site/willbchang/Front-End-Lib-641a7f4ffdc643239155757324fdce02 -->
 <!-- https://wangtunan.github.io/blog/interview/#%E5%8E%9F%E5%9E%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE -->
 <!-- https://zt0729.xyz/archives/5/ -->
-<!-- https://www.mengke.me/ -->
