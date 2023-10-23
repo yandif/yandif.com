@@ -22,6 +22,7 @@
 - [前端面试之道](https://wangtunan.github.io/blog/interview/#%E9%97%AD%E5%8C%85)
 - [一只不喝可乐的猪](https://zt0729.xyz/)
 - [Arthur 的博客](https://ffffourwood.cn/)
+- [ran 的博客](https://chaxus.github.io/ran/)
 
 ### 公司博客
 
