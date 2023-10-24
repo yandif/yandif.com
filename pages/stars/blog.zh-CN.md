@@ -23,6 +23,7 @@
 - [一只不喝可乐的猪](https://zt0729.xyz/)
 - [Arthur 的博客](https://ffffourwood.cn/)
 - [ran 的博客](https://chaxus.github.io/ran/)
+- [lei 的博客](https://leilog.io/posts/)
 
 ### 公司博客
 
