@@ -1,4 +1,4 @@
-import { Stack } from './Stack'
+import { Stack } from './Stack';
 
 function decimalToBase(decimal: number, base: number): string {
   if (decimal === 0) {
