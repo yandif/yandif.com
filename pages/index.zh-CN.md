@@ -5,7 +5,7 @@
 - [x] Kitten-ui 重构
 - [x] Kitten-ui 文档
 - [ ] 学习算法与数据结构
-- [ ] 写一个 nextra 主题
+- [x] 写一个 nextra 主题
 
 ### 要了解的概念
 
