@@ -37,3 +37,6 @@
 
 <!-- https://jasonkayzk.github.io/ -->
 <!-- https://godbasin.github.io/front-end-playground/front-end-basic/performance/front-end-performance-optimization.html#%E6%97%B6%E9%97%B4%E8%A7%92%E5%BA%A6%E4%BC%98%E5%8C%96-%E5%87%8F%E5%B0%91%E8%80%97%E6%97%B6 -->
+<!-- http://blog.lixingyu.cn:7090/ -->
+<!-- https://chemistwang.github.io/archive// -->
+<!-- https://hansimov.gitbook.io/csapp/ch01-a-tour-of-computer-systems -->
