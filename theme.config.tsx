@@ -7,7 +7,7 @@ const themeConfig: ThemeConfig = {
   faviconGlyph: '📖',
   docsRepositoryBase: 'https://github.com/yandif/yandif.com/tree/main',
   logo: <span className={styles.logo}>札记</span>,
-  head: <meta name="description" content="123" />,
+  head: <meta name="description" content="yandif's  blog" />,
   headerActions: {
     github: 'https://github.com/yandif',
     toggleTheme: true,

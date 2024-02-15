@@ -1,3 +1,7 @@
+---
+title: 收藏｜库
+---
+
 ### UI 框架
 
 - [React](https://react.dev/)
@@ -17,6 +21,7 @@
 - [choerodon-ui](https://open-hand.github.io/choerodon-ui/zh/)
 
 ### React
+
 - [react-input-mask](https://github.com/sanniassin/react-input-mask)
 
 ### 文档生成

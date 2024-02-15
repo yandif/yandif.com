@@ -1,3 +1,7 @@
+---
+title: 收藏｜工具
+---
+
 ### 工具
 
 - [正则表达式可视化](https://jex.im/regulex/)
@@ -20,11 +24,14 @@
 - [在线工具](https://tool.lu/)
 
 ### CSS 工具
+
 - [shadows 生成](https://shadows.brumm.af)
 
 ### PPT
+
 - [PPT 模版](https://www.ypppt.com/)
 
 ### AI 工具
+
 - [codeium](https://codeium.com/)
 <!-- https://jsbench.me/ -->

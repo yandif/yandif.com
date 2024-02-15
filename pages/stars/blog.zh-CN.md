@@ -1,3 +1,7 @@
+---
+title: 收藏｜博客
+---
+
 ### 博客
 
 - [张鑫旭](https://www.zhangxinxu.com/)⭐ CSS 技巧
@@ -31,6 +35,7 @@
 - [CSS-tricks](https://css-tricks.com/) CSS 技巧
 
 ### 其他
+
 - [HelloGitHub](https://hellogithub.com/) 开源项目推荐
 - [best of js](https://bestofjs.org/) js 库推荐
 <!-- https://www.skyzh.dev/about/ -->
