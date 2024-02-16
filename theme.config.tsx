@@ -1,4 +1,4 @@
-import { ThemeConfig } from 'nextra-theme-infp';
+import { ThemeConfig, useStore } from 'nextra-theme-infp';
 import styles from './theme.module.css';
 import useLocalesMap from './hooks/use-locales-map';
 import { Anchor, Box } from '@mantine/core';
@@ -7,7 +7,6 @@ const themeConfig: ThemeConfig = {
   faviconGlyph: '📖',
   docsRepositoryBase: 'https://github.com/yandif/yandif.com/tree/main',
   logo: <span className={styles.logo}>札记</span>,
-  head: <meta name="description" content="yandif's  blog" />,
   headerActions: {
     github: 'https://github.com/yandif',
     toggleTheme: true,
@@ -38,6 +37,17 @@ const themeConfig: ThemeConfig = {
         </Box>
       ),
     }),
+  giscusProps: {
+    repo: 'yandif/yandif.com',
+    repoId: 'MDEwOlJlcG9zaXRvcnkzNDI2MTMwNDM=',
+    category: 'Announcements',
+    categoryId: 'DIC_kwDOFGvcM84CdQ1g',
+    mapping: 'og:title',
+    strict: '0',
+    reactionsEnabled: '1',
+    emitMetadata: '0',
+    inputPosition: 'top',
+  },
 };
 
 export default themeConfig;
