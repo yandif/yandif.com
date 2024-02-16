@@ -14,10 +14,10 @@ export function CaseTool() {
           }}
         />
       </Input.Wrapper>
-      <Table m="lg">
+      <Table p="lg" my="md">
         <Table.Thead>
           <Table.Tr>
-            <Table.Td miw="100px">原文</Table.Td>
+            <Table.Td w="100px">原文</Table.Td>
             <Table.Td>转换后的</Table.Td>
           </Table.Tr>
         </Table.Thead>
