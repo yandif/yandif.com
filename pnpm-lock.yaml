@@ -33,8 +33,8 @@ dependencies:
     specifier: ^2.13.3
     version: 2.13.3(next@14.1.0)(nextra@2.13.3)(react-dom@18.2.0)(react@18.2.0)
   nextra-theme-infp:
-    specifier: ^0.0.8
-    version: 0.0.8(@mantine/core@7.5.2)(@mantine/hooks@7.5.2)(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.1.0
+    version: 0.1.0(@mantine/core@7.5.2)(@mantine/hooks@7.5.2)(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3492,8 +3492,8 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /nextra-theme-infp@0.0.8(@mantine/core@7.5.2)(@mantine/hooks@7.5.2)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Etnzi0rAJoyQkL/gKkp3JFaDFB2r2hiv6rmhJPeSYEd1uMBNF5fxKHRFVqJqI2I/VDR//odzhFTssofTEgcvuA==}
+  /nextra-theme-infp@0.1.0(@mantine/core@7.5.2)(@mantine/hooks@7.5.2)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-RZR4kaOU2iuMeAsBY6W4ASKMdseA/7uS6yhL0jLLsF1vY4R1VgJ21Br1LoDbpnFzJfFwsPQjCTKJ4O3Cs/178w==}
     peerDependencies:
       '@mantine/core': 7.5.2
       '@mantine/hooks': 7.5.2
