@@ -1,13 +1,13 @@
-import { Box, Input, InputLabel, Table } from '@mantine/core';
+import { Box, Input, Table, TextInput } from '@mantine/core';
 import { camelCase, lowerCase, snakeCase, startCase, upperCase } from 'lodash';
 import { useState } from 'react';
 
 export function CaseTool() {
-  const [text, setText] = useState();
+  const [text, setText] = useState('');
   return (
     <Box m="lg">
       <Input.Wrapper label="输入">
-        <Input
+        <TextInput
           value={text}
           onChange={(e) => {
             setText(e.target.value);
