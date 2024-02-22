@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "yandif.com",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port=3001",
     "build": "next build",
     "start": "next start",
     "commit": "git add . && git-cz && git push"
@@ -24,6 +24,8 @@
   },
   "devDependencies": {
     "@types/node": "20.11.19",
+    "@types/react": "^18.2.57",
+    "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.17",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog-chinese": "^2.3.0",
