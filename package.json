@@ -9,9 +9,9 @@
     "commit": "git add . && git-cz && git push"
   },
   "dependencies": {
-    "@codesandbox/sandpack-react": "^2.12.1",
-    "@mantine/core": "^7.5.2",
-    "@mantine/hooks": "^7.5.2",
+    "@codesandbox/sandpack-react": "^2.13.5",
+    "@mantine/core": "^7.6.1",
+    "@mantine/hooks": "^7.6.1",
     "@types/lodash": "^4.14.202",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
@@ -19,13 +19,13 @@
     "next": "^14.1.0",
     "nextra": "^2.13.3",
     "nextra-theme-docs": "^2.13.3",
-    "nextra-theme-infp": "^0.1.1",
+    "nextra-theme-infp": "^0.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "20.11.19",
-    "@types/react": "^18.2.57",
+    "@types/node": "20.11.24",
+    "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.17",
     "commitizen": "^4.3.0",
